@@ -1,0 +1,79 @@
+# A statistic, not a number that will break anything.
+# Just don't change it please.
+AmountOfCPUs = 1
+
+# Order number is the order that you can upgrade between OSes in the game
+# Order also acts as an ID.
+# Requirements for OSes and other parts are stored based off their IDs.
+
+# Name is simply a name used for displaying it to the user
+# Date available is the date you are able to upgrade to this CPU.
+# Description is also just to display to the user.
+# Clock_Mhz, measured in MHz.
+# Lithography, measured in nm.
+# Cores, amount of cores
+# Threads, amount of threads (typically double the amount of cores if the CPU supports multi-threading).
+# L1Cache, the L1 cache. Measured in KB.
+# L2Cache, the L2 cache. Measured in KB.
+# L3Cache, the L3 cache. Measured in KB.
+# TDP, the CPU's power consumption, measured in watts.
+# Architecture: 16-bit, 32-bit, 64-bit, may add more in the future (such as ARM64)
+[[CPUs]]
+Order = 0
+Name = "NMT 120-LP"
+Date_Available = "01/1990"
+Description = "Standard, single-core, slow, old CPU."
+Clock_Mhz = 20
+Lithography = 800
+Cores = 1
+Threads = 1
+L1Cache = 0
+L2Cache = 0
+L3Cache = 0
+TDP = 5
+Architecture = "16-bit"
+
+[[CPUs]]
+Order = 1
+Name = "NMT 140-LP"
+Date_Available = "06/1990"
+Description = "Upgrade to the 120-LP."
+Clock_Mhz = 40
+Lithography = 800
+Cores = 1
+Threads = 1
+L1Cache = 0
+L2Cache = 0
+L3Cache = 0
+TDP = 5
+Architecture = "16-bit"
+
+[[CPUs]]
+Order = 2
+Name = "NMT 266-HE/P"
+Date_Available = "12/1990"
+Description = "A high efficiency/performance, 32-bit experiment from Neo Micro Technologies."
+Clock_Mhz = 66
+Lithography = 800
+Cores = 1
+Threads = 1
+L1Cache = 8
+L2Cache = 0
+L3Cache = 0
+TDP = 10
+Architecture = "32-bit"
+
+[[CPUs]]
+Order = 3
+Name = "NMT a86-380HX"
+Date_Available = "03/1991"
+Description = "32-bit is now a permenant change!"
+Clock_Mhz = 80
+Lithography = 800
+Cores = 1
+Threads = 1
+L1Cache = 8
+L2Cache = 0
+L3Cache = 0
+TDP = 10
+Architecture = "32-bit"

@@ -1,0 +1,9 @@
+# Not actually relevant. Rather a statistic.
+# Just don't change it please.
+AmountOfOSes = 1
+
+# Order number is the order that you can upgrade between OSes in the game
+# Order also acts as an ID.
+[[OSes]]
+Order = 0
+Name = "ExpeditionOS Explorer 1.0"

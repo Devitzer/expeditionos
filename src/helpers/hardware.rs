@@ -1,21 +1,18 @@
 // Functions related to loading hardware.
 // This loads the TOML files in the data/ directory that contains all the hardware used within the game.
 
-use std::{env, fs, path::PathBuf};
+use std::fs;
 
 use toml::de::from_str;
 
 use crate::data_structs;
 
+use super::files;
+
 pub fn load_cpu() -> data_structs::cpu::Config {
-    let exe_path = env::current_exe().expect("Failed to get cpu-game.exe path to executable.");
+    let data_dir = files::get_config_directory();
 
-    let cpu_toml: PathBuf = exe_path
-        .parent()
-        .expect("Failed to get parent directory of the cpu-game.exe executable. This is required to retrieve the data for your game hardware.")
-        .join("data/cpu.toml");
-
-    let cpu_toml_file_str = cpu_toml.to_str().expect("Failed to convert game data path to string.");
+    let cpu_toml_file_str = data_dir.join("data/cpu.toml");
 
     let cpu_toml_string = fs::read_to_string(cpu_toml_file_str)
         .expect("Failed to read CPU config file.");
@@ -26,14 +23,9 @@ pub fn load_cpu() -> data_structs::cpu::Config {
 }
 
 pub fn load_ram() -> data_structs::ram::Config {
-    let exe_path = env::current_exe().expect("Failed to get cpu-game.exe path to executable.");
+    let data_dir = files::get_config_directory();
 
-    let ram_toml: PathBuf = exe_path
-        .parent()
-        .expect("Failed to get parent directory of the cpu-game.exe executable. This is required to retrieve the data for your game hardware.")
-        .join("data/ram.toml");
-
-    let ram_toml_file_str = ram_toml.to_str().expect("Failed to convert game data path to string.");
+    let ram_toml_file_str = data_dir.join("data/ram.toml");
 
     let ram_toml_string = fs::read_to_string(ram_toml_file_str)
         .expect("Failed to read RAM config file.");
@@ -44,14 +36,9 @@ pub fn load_ram() -> data_structs::ram::Config {
 }
 
 pub fn load_os() -> data_structs::os::Config {
-    let exe_path = env::current_exe().expect("Failed to get cpu-game.exe path to executable.");
+    let data_dir = files::get_config_directory();
 
-    let os_toml: PathBuf = exe_path
-        .parent()
-        .expect("Failed to get parent directory of the cpu-game.exe executable. This is required to retrieve the data for your game hardware.")
-        .join("data/os.toml");
-
-    let os_toml_file_str = os_toml.to_str().expect("Failed to convert game data path to string.");
+    let os_toml_file_str = data_dir.join("data/os.toml");
 
     let os_toml_string = fs::read_to_string(os_toml_file_str)
         .expect("Failed to read RAM config file.");

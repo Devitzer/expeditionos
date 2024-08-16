@@ -1,0 +1,27 @@
+# Very easy, just an array of different RAM sizes measured in KB.
+# Order is ID, it's the order that the RAM will be offered upgrades for.
+# Capacity, The RAM capacity, measured in KB.
+# Technology, the type of technology the ram uses, Example: DDR4
+# CPUReq, the minimum CPU needed (based off ID) needed to allow the upgrade to the RAM.
+# OSReq, the minimum OS needed (based off ID) needed to allow the upgrade to the RAM.
+
+[[RAM]]
+Order = 0
+Capacity = 1024
+Technology = "DRAM"
+CPUReq = 0
+OSReq = 0
+
+[[RAM]]
+Order = 1
+Capacity = 2048
+Technology = "DRAM"
+CPUReq = 2
+OSReq = 0
+
+[[RAM]]
+Order = 2
+Capacity = 4096
+Technology = "DRAM"
+CPUReq = 4
+OSReq = 1

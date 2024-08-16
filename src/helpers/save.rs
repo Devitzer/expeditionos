@@ -3,9 +3,9 @@
 use serde::Deserialize;
 use serde::Serialize;
 use toml::from_str;
-use std::env;
 use std::fs;
-use std::path::PathBuf;
+
+use super::files;
 
 // The save struct
 
@@ -20,26 +20,15 @@ pub struct Save {
 // The save arguement should be the Save struct..
 pub fn make_save(save: Save) {
     let toml_string = toml::to_string(&save).expect("Failed to serialize save game.");
-    
-    let exe_path = env::current_exe().expect("Failed to get cpu-game.exe path.");
+    let data_dir = files::get_config_directory();
 
-    let save_toml: PathBuf = exe_path
-        .parent()
-        .expect("Failed to retrieve cpu-game.exe parent directory.")
-        .join("save.toml");
-
-    fs::write(save_toml, toml_string).expect("Failed to save the save file.");
+    fs::write(data_dir.join("save.toml"), toml_string).expect("Failed to save the save file.");
 }
 
 pub fn load_save() -> Save {
-    let exe_path = env::current_exe().expect("Failed to get cpu-game.exe path to executable.");
+    let data_dir = files::get_config_directory();
 
-    let save_toml: PathBuf = exe_path
-        .parent()
-        .expect("Failed to get parent directory of the cpu-game.exe executable. This is required to retrieve the data for your game hardware.")
-        .join("save.toml");
-
-    let save_toml_file_str = save_toml.to_str().expect("Failed to convert game data path to string.");
+    let save_toml_file_str = data_dir.join("save.toml");
 
     let save_toml_string = fs::read_to_string(save_toml_file_str)
         .expect("Failed to read save file.");
