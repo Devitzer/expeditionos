@@ -1,84 +1,50 @@
+mod commands;
 mod helpers;
 mod data_structs;
-use std::fs;
-
-use dialoguer::Select;
-use colored::*;
 
 /// Starts the bootloader.
 /// This app is meant to be used in a global CLI environment (see GitHub for binaries), but we also allow for embedded solutions like this.
 /// 
 /// This function does not return anything, it simply gives you the menu prompts for the bootloader and acts accordingly.
 pub fn start() {
-    let save_file: helpers::save::Save = helpers::save::load_save();
-
-    let oses: data_structs::os::Config = helpers::hardware::load_os();
-
-    let boot_options = &["Boot PC", "Diagnostics"];
-
-    let boot = Select::new()
-        .with_prompt("Expedition Bootloader v1.0")
-        .items(boot_options)
-        .default(0)
-        .interact()
-        .unwrap();
-
-    // handle the initial boot
-    let os_styled = oses.OSes[save_file.os].Name.blue();
-
-    match boot {
-        0 => helpers::boot::boot_animation(os_styled.to_string(), 2000),
-        1 => helpers::boot::diagnostics(&save_file),
-        _ => println!("Unknown boot option")
-    }
-
-    // simply re-write the save, this happens every time, so that if the save file is changed it will be resaved without issues.
-    helpers::save::make_save(save_file);
+    commands::start::start();
 }
 
+/// # init
 /// Initializes the file necessary to run the game. You only need to run this once.
 /// If you don't run it, the start function will return an error.
 /// 
 /// Files save to either the AppData/Roaming/cpu-game folder on Windows, or home/user/.cpu-game
 pub fn init() {
-    let config_dir = helpers::files::get_config_directory();
+    commands::init::init();
+}
 
-    // Create the configuration directory if it doesn't exist
-    if !config_dir.exists() {
-        fs::create_dir_all(&config_dir).expect("Failed to create config directory");
-    }
+/// # delete
+/// Deletes all your game data.
+/// 
+/// This should be run when: <br>
+/// You are uninstaling expeditionos. <br>
+/// You want to re-initialize your game data.
+pub fn delete(delete_save: bool) {
+    commands::delete::delete(delete_save);
+}
 
-    let data_dir = config_dir.join("data");
-    if !data_dir.exists() {
-        fs::create_dir_all(&data_dir).expect("Failed to create data directory");
-    }
+/// # update
+/// Updates the game, should be run whenever a new version of expeditionos is installed.
+/// 
+/// This is the same as running: <br>
+/// expeditionos soft-delete <br>
+/// expeditionos init
+pub fn update() {
+    commands::update::update();
+}
 
-    // Create default configuration files
-    let save_file = include_str!("assets/save.toml");
-    let data_cpu = include_str!("assets/data/cpu.toml");
-    let data_os = include_str!("assets/data/os.toml");
-    let data_ram = include_str!("assets/data/ram.toml");
-
-    let save_file_dir = config_dir.join("save.toml");
-    if !save_file_dir.exists() {
-        let default_config = save_file;
-        fs::write(save_file_dir, default_config).expect("Failed to create default config file");
-    }
-    let data_cpu_file_dir = config_dir.join("data/cpu.toml");
-    if !data_cpu_file_dir.exists() {
-        let default_config = data_cpu;
-        fs::write(data_cpu_file_dir, default_config).expect("Failed to create default config file");
-    }
-    let data_os_file_dir = config_dir.join("data/os.toml");
-    if !data_os_file_dir.exists() {
-        let default_config = data_os;
-        fs::write(data_os_file_dir, default_config).expect("Failed to create default config file");
-    }
-    let ram_data_file_dir = config_dir.join("data/ram.toml");
-    if !ram_data_file_dir.exists() {
-        let default_config = data_ram;
-        fs::write(ram_data_file_dir, default_config).expect("Failed to create default config file");
-    }
-
-    println!("Initialization complete. Configuration files have been set up.");
+/// # reset
+/// Resets the game, deletes all your data (including saves) and re-initializes the game.
+/// 
+/// This is the same as running: <br>
+/// expeditionos hard-delete <br>
+/// expeditionos init
+pub fn reset() {
+    commands::reset::reset();
 }
