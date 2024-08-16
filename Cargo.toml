@@ -1,9 +1,10 @@
 [package]
-name = "cpu-game"
+name = "expeditionos"
 version = "0.1.0"
 edition = "2021"
 description = "A small CPU game to play with fictional hardware."
 license = "CC-BY-NC-ND-4.0"
+repository = "https://github.com/Devitzer/expeditionos"
 
 [dependencies]
 colored = "2.1.0"
