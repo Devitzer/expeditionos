@@ -77,3 +77,123 @@ L2Cache = 0
 L3Cache = 0
 TDP = 10
 Architecture = "32-bit"
+
+[[CPUs]]
+Order = 4
+Name = "NMT a86-480LPX"
+Date_Available = "03/1992"
+Description = "Lighter on the power."
+Clock_Mhz = 80
+Lithography = 800
+Cores = 1
+Threads = 1
+L1Cache = 8
+L2Cache = 0
+L3Cache = 0
+TDP = 8
+Architecture = "32-bit"
+
+[[CPUs]]
+Order = 5
+Name = "NMT a86-485HP"
+Date_Available = "03/1992"
+Description = "Higher clock speed."
+Clock_Mhz = 85
+Lithography = 800
+Cores = 1
+Threads = 1
+L1Cache = 8
+L2Cache = 0
+L3Cache = 0
+TDP = 10
+Architecture = "32-bit"
+
+[[CPUs]]
+Order = 6
+Name = "NMT Dualie 810HX"
+Date_Available = "03/1993"
+Description = "Dual-core, double performance."
+Clock_Mhz = 100
+Lithography = 800
+Cores = 2
+Threads = 1
+L1Cache = 8
+L2Cache = 0
+L3Cache = 0
+TDP = 15
+Architecture = "32-bit"
+
+[[CPUs]]
+Order = 7
+Name = "NMT Dualie 810HXHC"
+Date_Available = "10/1993"
+Description = "Double the cache."
+Clock_Mhz = 80
+Lithography = 800
+Cores = 1
+Threads = 1
+L1Cache = 16
+L2Cache = 0
+L3Cache = 0
+TDP = 15
+Architecture = "32-bit"
+
+[[CPUs]]
+Order = 8
+Name = "NMT Dualie 820HXHC"
+Date_Available = "03/1994"
+Description = "Ultra clock speeds for an ultra PC."
+Clock_Mhz = 120
+Lithography = 800
+Cores = 2
+Threads = 1
+L1Cache = 16
+L2Cache = 0
+L3Cache = 0
+TDP = 15
+Architecture = "32-bit"
+
+[[CPUs]]
+Order = 9
+Name = "NMT Dualie 2030H"
+Date_Available = "09/1994"
+Description = "The most advanced technology, ever."
+Clock_Mhz = 200
+Lithography = 350
+Cores = 2
+Threads = 1
+L1Cache = 16
+L2Cache = 0
+L3Cache = 0
+TDP = 25
+Architecture = "32-bit"
+
+[[CPUs]]
+Order = 10
+Name = "NMT Dualie 2130"
+Date_Available = "03/1995"
+Description = "State-of-the-art technology, in a micro size chip."
+Clock_Mhz = 100
+Lithography = 350
+Cores = 2
+Threads = 1
+L1Cache = 16
+L2Cache = 0
+L3Cache = 0
+TDP = 25
+Architecture = "32-bit"
+
+[[CPUs]]
+Order = 11
+Name = "NMT Pro 2350SC"
+Date_Available = "12/1995"
+Description = "A singular, powerful core."
+Clock_Mhz = 200
+Lithography = 350
+Cores = 1
+Threads = 1
+L1Cache = 16
+L2Cache = 0
+L3Cache = 0
+TDP = 30
+Architecture = "32-bit"
