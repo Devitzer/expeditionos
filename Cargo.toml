@@ -1,6 +1,6 @@
 [package]
 name = "expeditionos"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A small CPU game to play with fictional hardware."
 license = "CC-BY-NC-ND-4.0"
