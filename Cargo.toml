@@ -1,6 +1,6 @@
 [package]
 name = "expeditionos"
-version = "0.4.0"
+version = "0.4.1"
 edition = "2021"
 description = "A small CPU game to play with fictional hardware."
 license = "CC-BY-NC-ND-4.0"
@@ -10,5 +10,5 @@ repository = "https://github.com/Devitzer/expeditionos"
 [dependencies]
 colored = "2.1.0"
 dialoguer = "0.11.0"
-serde = { version = "1.0.207", features = ["derive"] }
+serde = { version = "1.0.208", features = ["derive"] }
 toml = "0.8.19"
