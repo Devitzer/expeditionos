@@ -1,6 +1,6 @@
 # A statistic, not a number that will break anything.
 # Just don't change it please.
-AmountOfCPUs = 1
+AmountOfCPUs = 12
 
 # Order number is the order that you can upgrade between OSes in the game
 # Order also acts as an ID.
@@ -96,7 +96,7 @@ Architecture = "32-bit"
 [[CPUs]]
 Order = 5
 Name = "NMT a86-485HP"
-Date_Available = "03/1992"
+Date_Available = "06/1992"
 Description = "Higher clock speed."
 Clock_Mhz = 85
 Lithography = 800

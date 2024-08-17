@@ -25,6 +25,10 @@ pub fn init() {
 /// This should be run when: <br>
 /// You are uninstaling expeditionos. <br>
 /// You want to re-initialize your game data.
+/// 
+/// # Arguements
+/// 
+/// * `delete_save` - If true, it will delete the save game file also, otherwise just the hardware data.
 pub fn delete(delete_save: bool) {
     commands::delete::delete(delete_save);
 }

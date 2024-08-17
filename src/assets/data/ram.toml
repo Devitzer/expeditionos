@@ -7,21 +7,49 @@
 
 [[RAM]]
 Order = 0
-Capacity = 1024
-Technology = "DRAM"
+Capacity = 1000
+Technology = "FPM DRAM"
 CPUReq = 0
 OSReq = 0
 
 [[RAM]]
 Order = 1
-Capacity = 2048
-Technology = "DRAM"
-CPUReq = 2
+Capacity = 2000
+Technology = "FPM DRAM"
+CPUReq = 3
 OSReq = 0
 
 [[RAM]]
 Order = 2
-Capacity = 4096
-Technology = "DRAM"
+Capacity = 4000
+Technology = "FPM DRAM"
 CPUReq = 4
-OSReq = 1
+OSReq = 0
+
+[[RAM]]
+Order = 3
+Capacity = 8000
+Technology = "FPM DRAM"
+CPUReq = 4
+OSReq = 0
+
+[[RAM]]
+Order = 4
+Capacity = 16000
+Technology = "FPM DRAM"
+CPUReq = 7
+OSReq = 0
+
+[[RAM]]
+Order = 5
+Capacity = 24000
+Technology = "EDO DRAM"
+CPUReq = 8
+OSReq = 0
+
+[[RAM]]
+Order = 6
+Capacity = 32000
+Technology = "EDO DRAM"
+CPUReq = 4
+OSReq = 9
