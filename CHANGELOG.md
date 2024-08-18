@@ -1,3 +1,13 @@
+# 0.4.2 (2024-08-17)
+
+## Added
+
+- New OSes up to 1995. Requires running `update` command/function.
+
+## Changed
+
+- README has had some minor changes to be more concise and clear.
+
 # 0.4.1 (2024-08-17)
 
 ## Upgrades

@@ -4,6 +4,42 @@ AmountOfOSes = 1
 
 # Order number is the order that you can upgrade between OSes in the game
 # Order also acts as an ID.
+# CPUReq is the minimum CPU needed to install this OS.
+# RAMReq is the minimum amount of RAM needed to install this OS.
+
+# 1990
 [[OSes]]
 Order = 0
 Name = "ExpeditionOS Explorer 1.0"
+CPUReq = 0
+RAMReq = 0
+
+# 1990
+[[OSes]]
+Order = 1
+Name = "ExpeditionOS Traveller 1.1"
+CPUReq = 0
+RAMReq = 1
+
+# 1991
+[[OSes]]
+Order = 2
+Name = "ExpeditionOS Snowtop 2.0"
+# Recommended CPUReq 3 for better experience
+CPUReq = 2
+RAMReq = 1
+
+# 1992
+[[OSes]]
+Order = 2
+Name = "ExpeditionOS Sycamore 2.01"
+CPUReq = 4
+RAMReq = 2
+
+# 1995
+[[OSes]]
+Order = 4
+Name = "ExpeditionOS Redwood 3.0"
+CPUReq = 7
+# recommended ramreq 3
+RAMReq = 2

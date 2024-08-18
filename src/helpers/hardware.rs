@@ -41,9 +41,9 @@ pub fn load_os() -> data_structs::os::Config {
     let os_toml_file_str = data_dir.join("data/os.toml");
 
     let os_toml_string = fs::read_to_string(os_toml_file_str)
-        .expect("Failed to read RAM config file.");
+        .expect("Failed to read OS config file.");
     let oses: data_structs::os::Config = from_str(&os_toml_string)
-        .expect("Expected a proper RAM config. It is not formatted correctly. Refer to the data_structs/ram.rs structure.");
+        .expect("Expected a proper OS config. It is not formatted correctly. Refer to the data_structs/os.rs structure.");
 
     oses
 }

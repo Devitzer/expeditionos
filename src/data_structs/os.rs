@@ -11,5 +11,7 @@ pub struct Config {
 #[derive(Debug, Deserialize)]
 pub struct OSes {
     pub Order: usize,
-    pub Name: String
+    pub Name: String,
+    pub CPUReq: usize,
+    pub RAMReq: usize
 }
